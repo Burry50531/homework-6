@@ -24,8 +24,9 @@ g++ -fsanitize=address -g -O1 -o test_case1 test_case1.cpp
 
 -O1 — оптимізація, сумісна з ASan
 
-▶ Запуск
+Запуск
 ./test_case1
+
 Приклад виводу ASan
 ==12345==ERROR: AddressSanitizer: use-of-uninitialized-value
     #0 0x7f4d893 in main test_case1.cpp:8
@@ -33,8 +34,3 @@ g++ -fsanitize=address -g -O1 -o test_case1 test_case1.cpp
   Uninitialized value was created by a heap allocation
     #0 0x4b7f80 in operator new[](unsigned long) ...
     #1 0x7f4d893 in main test_case1.cpp:5
-ASan чітко вказує:
-
-Рядок, де відбулося читання неініціалізованої памʼяті
-
-Місце, де була виділена памʼять, яку не було заповнено
